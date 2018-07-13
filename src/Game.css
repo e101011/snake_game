@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700');
+
+:root {
+	--color: #1B1B1B;
+	--background: #272626;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	user-select:none;
+}
+
+.snake-game {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background: var(--background);
+	margin: 0;
+	padding: 0;
+	color: var(--color);
+	font: 20px 'Roboto Condensed', sans-serif;
+	text-transform: uppercase;
+}
+
+.open-settings .settings-block {
+	display: flex;
+}
+
+canvas {
+	border: 1px dashed var(--color);
+}
+
+.game-over {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: var(--background);
+	line-height: 60px;
+	z-index: 5;
+}
+
+.game-over span {
+	font-size: 100px;
+}
+
+.restart {
+	cursor: pointer;
+}
+
+.settings {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+
+.settings-block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--background);
+	border: 1px solid var(--background);
+	z-index: 1;
+}
+
+.settings-block > .title {
+	margin-bottom: 100px;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	line-height: 50px;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+}
+
+.checkbox, li {
+	position: relative;
+	list-style-type: none;
+	background: var(--color);
+	width: 20px;
+	height: 20px;
+	margin: 0 8px;
+	cursor: pointer;
+}
+
+.colors {
+	display: flex;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	z-index: 2;
+}
+
+.blue, .red {
+	width: 10px;
+	height: 10px;
+	cursor: pointer;
+}
+
+.blue {
+	background: linear-gradient(to right, #00e3ad 0%,#00dfb1 12%,#00d6bd 23%,#00d0c5 33%,#00ccc8 46%,#00c9cc 57%,#00c6d0 68%,#00c0d9 79%,#00bbdd 89%,#7db9e8 100%);
+	margin-right: 5px;
+}
+
+.red {
+	background: #F16658;
+}
+
+.checkbox.checked:before,
+li.active:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 50%;
+	background: var(--background);
+}
+
+.close-button {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 50px;
+	right: 50px;
+	transform: rotate(45deg);
+	cursor: pointer;
+}
+
+.close-button:after,
+.close-button:before {
+	content: '';
+	position: absolute;
+	background: var(--color);
+}
+
+.close-button:after {
+	left: 50%;
+	transform: translate(-50%, 0);
+	width: 3px;
+	height: 100%;
+}
+
+.close-button:before {
+	top: 50%;
+	transform: translate(0, -50%);
+	width: 100%;
+	height: 3px;
+}
+
+.snake-size {
+	position: relative;
+	margin: 0 16px;
+}
+
+.decrease,
+.increase {
+	content: '';
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	border: 6px solid transparent;
+	cursor: pointer;
+}
+
+.size {
+	padding: 0 2px;
+}
+
+.decrease {
+	left: -14px;
+	border-right: 6px solid var(--color);
+}
+
+.increase {
+	right: -14px;
+	border-left: 6px solid var(--color);
+}
+
+.score {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
